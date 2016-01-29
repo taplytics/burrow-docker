@@ -1,6 +1,6 @@
 FROM golang
 
-MAINTAINER "Alex Nederlof <alex@nederlof.com>"
+MAINTAINER Alex Nederlof "https://github.com/alexnederlof"
 
 RUN useradd --system --home /opt/burrow burrow
 
