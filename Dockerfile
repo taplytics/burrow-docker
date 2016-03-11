@@ -2,7 +2,9 @@ FROM golang
 
 MAINTAINER Alex Nederlof "https://github.com/alexnederlof"
 
-RUN useradd --system --home /opt/burrow burrow
+RUN mkdir -p /opt/burrow/log && \
+    useradd --system --home /opt/burrow burrow && \
+    chown -R burrow /opt/burrow 
 
 RUN go get github.com/linkedin/burrow
 RUN wget https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm && chmod +x gpm && mv gpm /usr/local/bin
